@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace !important;
+  /* background-color: var(--dark-bg-); */
+}
+
+
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+
+body::-webkit-scrollbar-thumb {
+  background: #27ff00;
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 3px;
+  margin: 10px 0;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: #27ff00;
+  border-radius: 10px;
+}

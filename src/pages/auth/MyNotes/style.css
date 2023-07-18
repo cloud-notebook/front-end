@@ -1,0 +1,186 @@
+.row {
+    width: 100%;
+}
+
+.row h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.75em;
+    font-weight: 600;
+    color: #070024;
+}
+
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1em;
+}
+
+.add_note_button{
+    color: white;
+    background-color: green;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.card {
+    flex: 30%;
+    padding: 3.1em 1.25em;
+    text-align: center;
+    background: linear-gradient(0deg, #397ef6 10px, transparent 10px);
+    background-repeat: no-repeat;
+    background-position: 0 0.62em;
+    box-shadow: 0 0 2.5em rgba(0, 0, 0, 0.15);
+    border-radius: 0.5em;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card .icon {
+    font-size: 2.5em;
+    height: 2em;
+    width: 2em;
+    margin: auto;
+    background-color: #397ef6;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+.icon:before {
+    position: absolute;
+    content: "";
+    height: 1.5em;
+    width: 1.5em;
+    border: 0.12em solid #397ef6;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.card h3 {
+    font-size: 1.3em;
+    margin: 1em 0 1.4em 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #070024;
+}
+
+.card p {
+    line-height: 2em;
+    color: #625a71;
+}
+
+.card:hover {
+    background-position: 0;
+}
+
+.card:hover .icon:before {
+    height: 2.25em;
+    width: 2.25em;
+}
+
+.note_card_tag {
+    display: flex;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.note_card_tag h5 {
+    font-weight: bold;
+}
+
+.buttons_two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px;
+}
+
+.edit_button {
+    color: white;
+    background-color: green;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    margin: 0px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit_button:hover {
+    background-color: rgb(5, 183, 91);
+    font-weight: bold;
+    transition: 1s all ease-out;
+    transform: scaleX(1.1);
+}
+
+.delete_button {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(159, 12, 12);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.delete_button:hover {
+    /* background-color: rgb(246, 45, 45); */
+    background-color: red;
+    font-weight: bolder;
+    transition: 1s all ease-out;
+    transform: scaleX(1.1);
+}
+
+.view_button{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(0, 255, 0);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 12px;
+}
+
+.view_button:hover {
+    background-color: rgb(0, 255, 0);
+    font-weight: bolder;
+    transition: 1s all ease-out;
+    transform: scaleX(1.1);
+}
+
+@media screen and (min-width: 768px) {
+    section {
+        padding: 1em 7em;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    section {
+        padding: 1em;
+    }
+
+    .card {
+        padding: 5em 2em;
+    }
+
+    .column {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 0 1em;
+    }
+}

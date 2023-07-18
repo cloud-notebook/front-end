@@ -1,0 +1,6 @@
+.profile-container {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
+}
