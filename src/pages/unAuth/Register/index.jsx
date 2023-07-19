@@ -68,7 +68,7 @@ export default function Register() {
 
     return (
         <section class="flex justify-center mt-5 border-none">
-            <div class="form login dark:bg-black dark:text-white">
+            <div class="form login dark:bg-black dark:text-white  flex justify-center items-center">
                 <div class="form-content">
                     <header className='dark:text-white'>Register</header>
                     <form onSubmit={Formik.handleSubmit}>

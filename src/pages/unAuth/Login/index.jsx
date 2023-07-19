@@ -62,9 +62,9 @@ export default function Login() {
 
     return (
         <section className="container_login forms">
-            <div className="form login dark:bg-black dark:text-white">
+            <div className="form login dark:bg-black dark:text-white flex justify-center items-center">
                 <div className="form-content">
-                    <header className='dark:text-white'>Login</header>
+                    <header className='dark:text-white '>Login</header>
                     <form onSubmit={Formik.handleSubmit}>
                         <div className="field input-field">
                             <input

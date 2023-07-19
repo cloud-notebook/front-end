@@ -27,8 +27,8 @@ export default function Home() {
                 </div>
             </div>
             <div id="future">
-                <h1 id="head">Efficient Note Search <br /> Made Simple</h1>
-                <p id="pra">Our advanced search feature lets you find specific notes instantly, saving you valuable time and ensuring you never lose track of important information</p>
+                <h1 id="head" class="text-yellow-500 pt-4 text-center">Efficient Note Search <br /> Made Simple</h1>
+                <p id="pra" class="dark:text-white pt-3 text-center">Our advanced search feature lets you find specific notes instantly, saving you valuable time and ensuring you never lose track of important information</p>
 
             </div>
         </div>

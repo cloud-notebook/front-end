@@ -65,7 +65,7 @@ export default function PublicNotes() {
             <div className="flex sm:justify-between justify-center flex-col sm:flex-row ">
                 <h1 className='sm:text-2xl text-sm font-bold text-center'>All Public Notes Here</h1>
                 <div className='w-[40%] relative'>
-                    <input onChange={handleSearchOnChange} className='w-full rounded-md p-2 border border-gray-300 relative' type="search" name="search" id="search" />
+                    <input onChange={handleSearchOnChange} className='w-full rounded-md p-2 dark:text-black border border-gray-300 relative' type="search" name="search" id="search" />
                     <button className='absolute top-0.5 outline-none hover:border-blue-700 right-0 p-2.5 text-blue-700 text-lg rounded-md'><AiOutlineSearch /></button>
                 </div>
             </div>
