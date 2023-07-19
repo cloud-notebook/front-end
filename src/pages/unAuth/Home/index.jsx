@@ -18,7 +18,7 @@ export default function Home() {
 
                 </div>
             </div>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 p-4'>
                 <div>
                     <img src={img1} alt="pic1" class="pics" />
                 </div>
