@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { AiFillDelete, AiFillEye, AiOutlineEdit, AiOutlinePlus } from "react-icons/ai";
 import Modal from "../../../components/Modal";
 
+
 export default function MyNotes() {
     const navigate = useNavigate();
     const [notes, setNotes] = useState([]);
@@ -15,6 +16,7 @@ export default function MyNotes() {
     useEffect(() => {
         if (isSuccess) {
             setNotes(data?.notes)
+            console.log(data)
         }
     }, [data, isSuccess])
     function handelDeleteNote(id) {
@@ -75,6 +77,7 @@ export default function MyNotes() {
                         </div>
                     })
                 }
+
             </section>
         </div>
     )

@@ -3,13 +3,14 @@ import Card from '../../../components/Card/Card'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Pagination from '../../../components/Pagination'
 import { useAllPublicNotesQuery, useLazyAllPublicNotesQuery, useLazySearchNoteQuery } from '../../../services/notes.service';
+import ReactPaginate from 'react-paginate'
 
 export default function PublicNotes() {
     const [notes, setNotes] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
-    const { data, isLoading, isError, error, isSuccess } = useAllPublicNotesQuery(page);
+    const { data, isLoading, isError, error, isSuccess, refetch } = useAllPublicNotesQuery(page);
 
     const [publicNotesQuery] = useLazyAllPublicNotesQuery()
 
@@ -60,6 +61,11 @@ export default function PublicNotes() {
         })
     }
 
+    const handleChangePage = ({ selected }) => {
+        setPage(selected);
+        refetch();
+    }
+
     return (
         <div className='w-[80%] mx-auto py-5 dark:text-white dark:bg-slate-800'>
             <div className="flex sm:justify-between justify-center flex-col sm:flex-row ">
@@ -78,7 +84,20 @@ export default function PublicNotes() {
                     })
                 }
             </div>
-            <Pagination currentPage={page} totalPages={totalPages} onPageChange={() => { }} />
+            <ReactPaginate
+                previousLabel={"<Previous"}
+                nextLabel={"Next>"}
+                pageCount={totalPages}
+                onPageChange={handleChangePage}
+                containerClassName={"pagination-container"}
+                previousClassName={"bg-green-800 text-white px-4 py-2 rounded-md"}
+                previouslinkClassName={"bg-green-800 px-4 py-2"}
+                nextClassName={"bg-green-800 px-4 py-2 rounded-md text-white"}
+                disabledClassName={"text-gray-300 cursor-not-allowed"}
+                disabledLinkClassName={"text-gray-300 cursor-not-allowed"}
+                activeClassName={"bg-green-800 border-none text-white px-4 py-2 rounded-md"}
+                pageClassName={"border border-green-800 border-none  px-4 py-2 rounded-md"}
+            />
         </div>
     )
 }
