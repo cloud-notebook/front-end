@@ -89,7 +89,7 @@ export default function PublicNotes() {
                 nextLabel={"Next>"}
                 pageCount={totalPages}
                 onPageChange={handleChangePage}
-                containerClassName={"pagination-container"}
+                containerClassName={"flex gap-3 justify-center"}
                 previousClassName={"bg-green-800 text-white px-4 py-2 rounded-md"}
                 previouslinkClassName={"bg-green-800 px-4 py-2"}
                 nextClassName={"bg-green-800 px-4 py-2 rounded-md text-white"}

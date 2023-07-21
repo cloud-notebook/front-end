@@ -43,10 +43,10 @@ export default function MyNotes() {
                 <button className={'flex dark:bg-black dark:text-white  items-center gap-2 bg-green-600 md:p-2 p-1.5 md:text-lg text-[10px] rounded text-white'} onClick={() => navigate('/create-note')}><AiOutlinePlus /> Add New Note</button>
             </div>
             <hr className={'w-[70%] mx-auto'} />
-            <section className="md:flex sm:flex-nowrap flex-wrap gap-5 w-[70%] mx-auto">
+            <section className="grid grid-cols-12 gap-5 w-[90%] md:w-[70%] mx-auto">
                 {
                     notes.map((note) => {
-                        return <div key={note?._id} className="card dark:bg-black dark:text-white flex-1 md:mb-0 mb-3 relative">
+                        return <div key={note?._id} className="col-span-8 md:col-span-6 card dark:bg-black dark:text-white flex-1 md:mb-0 mb-3 relative">
                             <div className="icon">
                                 <i className="fa-solid fa-book"></i>
                             </div>
