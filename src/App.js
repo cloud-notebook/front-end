@@ -1,7 +1,7 @@
 import RootRoute from "./routes";
 
 function App() {
-  return <RootRoute />
+  return <RootRoute />;
 }
 
 export default App;
