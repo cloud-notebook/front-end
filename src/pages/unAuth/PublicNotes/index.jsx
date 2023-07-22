@@ -8,7 +8,7 @@ import ReactPaginate from 'react-paginate'
 export default function PublicNotes() {
     const [notes, setNotes] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
 
     const { data, isLoading, isError, error, isSuccess, refetch } = useAllPublicNotesQuery(page);
 
@@ -18,20 +18,7 @@ export default function PublicNotes() {
 
 
 
-    useEffect(() => {
 
-        if (isSuccess) {
-            setNotes(data.notes);
-            setTotalPages(data.totalPages);
-            setPage(data.currentPage);
-            console.log(data);
-        }
-
-        if (isError) {
-            console.log(error);
-        }
-
-    }, [page, isLoading, isError, error, isSuccess]);
 
     const handleSearchOnChange = (e) => {
         if (e.target.value === '') {
@@ -62,8 +49,10 @@ export default function PublicNotes() {
     }
 
     const handleChangePage = ({ selected }) => {
-        setPage(selected);
+        console.log(selected);
+        setPage(selected + 1);
         refetch();
+        console.log(notes)
     }
 
     return (
@@ -79,7 +68,7 @@ export default function PublicNotes() {
             <div className="grid grid-cols-12 gap-2">
 
                 {
-                    notes?.map((note, index) => {
+                    isLoading ? <div className='h-[400px] flex items-center justify-center'>Loading...</div> : data?.notes?.map((note, index) => {
                         return <Card note={note} key={index} />
                     })
                 }
@@ -87,17 +76,19 @@ export default function PublicNotes() {
             <ReactPaginate
                 previousLabel={"<Previous"}
                 nextLabel={"Next>"}
-                pageCount={totalPages}
+                pageCount={data?.totalPage}
+
                 onPageChange={handleChangePage}
-                containerClassName={"flex gap-3 justify-center"}
+                containerClassName={"flex gap-3 justify-center no-underline"}
                 previousClassName={"bg-green-800 text-white px-4 py-2 rounded-md"}
-                previouslinkClassName={"bg-green-800 px-4 py-2"}
-                nextClassName={"bg-green-800 px-4 py-2 rounded-md text-white"}
+                previousLinkClassName={"bg-green-800 px-4 py-2 no-underline text-white"}
+                nextLinkClassName={"bg-green-800 px-4 py-2 rounded-md text-white no-underline"}
+                nextClassName={"bg-green-800 px-4 py-2 rounded-md text-white no-underline"}
                 disabledClassName={"text-gray-300 cursor-not-allowed"}
                 disabledLinkClassName={"text-gray-300 cursor-not-allowed"}
                 activeClassName={"bg-green-800 border-none text-white px-4 py-2 rounded-md"}
-                pageClassName={"border border-green-800 border-none  px-4 py-2 rounded-md"}
+                pageClassName={"no-underline border border-green-800 border-none  px-4 py-2 rounded-md"}
             />
         </div>
-    )
+    );
 }
